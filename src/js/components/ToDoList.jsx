@@ -17,6 +17,16 @@ export const ToDoList = () => {
 
     }
 
+    let eliminateListElement = (indexRemove) => {
+        let newList = list.filter((item, index) => {
+            if (index !== indexRemove) {
+                return true;
+            } else {
+                return false;
+            }
+        });
+        setList(newList);
+    };
 
 
     return (
@@ -39,7 +49,7 @@ export const ToDoList = () => {
                 <div className="col-6 m-auto">
                     <ul>
                         {list.map((item, index) => (
-                            <li key={index}> {item} </li>
+                            <li key={index}> {item} <button onClick={() => eliminateListElement(index)}>borrar</button></li>
 
                         ))}
                     </ul>
@@ -55,4 +65,4 @@ export const ToDoList = () => {
 
 }
 
-// onClick={() => eliminarTarea(index)}
+
