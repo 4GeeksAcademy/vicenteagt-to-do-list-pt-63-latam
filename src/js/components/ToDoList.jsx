@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 export const ToDoList = () => {
     let [task, setTask] = useState("");
@@ -28,6 +28,19 @@ export const ToDoList = () => {
         setList(newList);
     };
 
+   let [divDescriptionNoTask, setDivDescriptionNoTask] = useState("")
+   
+   function condicionalDivDescriptionNoTask () {
+if (list.length === 0){
+    setDivDescriptionNoTask("")
+} else {
+    setDivDescriptionNoTask("hiddenDiv")
+} return
+   }
+
+useEffect(() => {
+  condicionalDivDescriptionNoTask();
+}, [list]); 
 
     return (
         <div className="row">
@@ -68,6 +81,11 @@ export const ToDoList = () => {
 
                     ))}
                 </>
+                <div className={"row "+ divDescriptionNoTask}>
+                    <div className="col-12 p-2 border-top border-secondary">
+                        <p className="ps-5 pe-1 listItemStyle">No hay tareas, añadir tareas</p>
+                    </div>
+                </div>
                 <div className="row">
                     <div className="col-12  m-auto border-top border-secondary paper">
                         <p className="itemBrandStyle">{list.length + " item left"}</p>
@@ -82,5 +100,7 @@ export const ToDoList = () => {
 
 
 }
+
+
 
 

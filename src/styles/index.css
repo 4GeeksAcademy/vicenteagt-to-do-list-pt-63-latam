@@ -70,3 +70,7 @@ background-color: white;
        0 0 10px rgba(0, 0, 0, 0.361);
     ;
 }
+
+.hiddenDiv{
+    display: none;
+}
