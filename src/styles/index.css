@@ -3,7 +3,7 @@
     height: auto;
 }
 body{
-    background-color: black;
+    background-color: rgb(217, 216, 216);
 }
 
 ::placeholder{
@@ -23,7 +23,7 @@ input:focus {
 }
 
 .listItemStyle{
-    font-weight: 2;
+    font-weight: 10;
     font-size: 20px;
 }
 
@@ -42,6 +42,26 @@ input:focus {
 
 .todosTittleStyle{
     font-size: 100px;
-    color: aliceblue;
-    font-weight: 2;
+    color: rgb(240, 240, 240);
+    font-weight: 50;
 }
+
+
+    .paper {
+background-color: white;
+  box-shadow:
+  
+    /* The top layer shadow */
+    0 1px 1px rgba(0,0,0,0.15),
+    /* The second layer */
+    0 10px 0 -5px #eee,
+    /* The second layer shadow */
+    0 10px 1px -4px rgba(0,0,0,0.15),
+     /* The third layer */
+    0 20px 0 -10px #eee,
+    /* The third layer shadow */
+    0 20px 1px -9px rgba(0,0,0,0.15);
+    /* Padding for demo purposes */
+    
+}
+

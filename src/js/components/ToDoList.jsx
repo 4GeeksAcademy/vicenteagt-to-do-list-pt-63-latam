@@ -31,7 +31,7 @@ export const ToDoList = () => {
 
     return (
         <div className="row">
-            <div className="col-6 bg-white m-auto mt-2 border border-primary-subtle">
+            <div className="col-6 bg-white m-auto mt-2 border border-secondary paper">
                 <div className="row">
                     <div className="col-12 m-auto pb-2">
                         <div className="row">
@@ -51,7 +51,7 @@ export const ToDoList = () => {
 <div className="row">
                 
                     
-                        <div className="col-12 p-3 border-top border-primary-subtle styleTaskContainer" key={index}> 
+                        <div className="col-12 p-3 border-top border-secondary styleTaskContainer" key={index}> 
                             <div className="row">
                                 <div className="col-6">
                         <span className="ps-5 pe-1 listItemStyle">{item}</span>
@@ -67,7 +67,7 @@ export const ToDoList = () => {
                         ))}
             </>
             <div className="row">
-                <div className="col-12  m-auto border-top border-primary-subtle ">
+                <div className="col-12  m-auto border-top border-secondary ">
                     <p className="itemBrandStyle">{list.length + " item left"}</p>
                 </div>
             </div>
