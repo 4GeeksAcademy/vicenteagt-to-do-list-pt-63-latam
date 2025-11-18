@@ -1,17 +1,17 @@
 import React, { useState } from "react";
 
 export const ToDoList = () => {
-    let [task, setTask] = useState("");   //*String del input cambio de estado
+    let [task, setTask] = useState("");
 
-    function addNewTask(event) {          //*recuperacion de string
+    function addNewTask(event) {
         setTask(event.target.value)
 
     }
 
-    let [list, setList] = useState([]) //* array cambio de estado
+    let [list, setList] = useState([])
 
 
-    function addNewArrayElementToList() {       //* agregar task al array
+    function addNewArrayElementToList() {
         setList([...list, task])
         setTask("")
 
@@ -31,49 +31,51 @@ export const ToDoList = () => {
 
     return (
         <div className="row">
-            <div className="col-6 bg-white m-auto mt-2 border border-secondary paper">
+            <div className="col-11 col-sm-11 col-md-11 col-lg-11 col-xl-6 col-xxl-6
+            bg-white m-auto mt-2 border border-secondary generalContainer">
                 <div className="row">
-                    <div className="col-12 m-auto pb-2">
+                    <div className="col-11 col-sm-10 col-md-10 col-lg-12 col-xl-12 col-xxl-12
+                    m-auto pb-2">
                         <div className="row">
                             <div className="col-12 m-auto mt-3 ps-5 pe-1">
-                                <input type="text" className="form-control border border-0" placeholder="What needs to be done?"value={task} onChange={addNewTask}
+                                <input type="text" className="form-control border border-0" placeholder="What needs to be done?" value={task} onChange={addNewTask}
                                     onKeyDown={(e) => {
                                         if (e.key === 'Enter') {
                                             addNewArrayElementToList();
                                         }
-                                    }}/>
+                                    }} />
                             </div>
                         </div>
                     </div>
                 </div>
                 <>
                     {list.map((item, index) => (
-<div className="row">
-                
-                    
-                        <div className="col-12 p-3 border-top border-secondary styleTaskContainer" key={index}> 
-                            <div className="row">
-                                <div className="col-6">
-                        <span className="ps-5 pe-1 listItemStyle">{item}</span>
-                        </div>
-                        <div className="col-2 ms-auto">
-                       <span><i className="fa-solid fa-x text-danger showAndHiddenButton" onClick={() => eliminateListElement(index)}></i></span> 
-                       </div>
-                        </div>
-                        </div>
-                           
-  </div>
-            
-                        ))}
-            </>
-            <div className="row">
-                <div className="col-12  m-auto border-top border-secondary ">
-                    <p className="itemBrandStyle">{list.length + " item left"}</p>
-                </div>
-            </div>
+                        <div className="row">
 
-        </div>
-            </div >
+
+                            <div className="col-12 p-3 border-top border-secondary styleTaskContainer" key={index}>
+                                <div className="row">
+                                    <div className="col-6">
+                                        <span className="ps-5 pe-1 listItemStyle">{item}</span>
+                                    </div>
+                                    <div className="col-2 ms-auto">
+                                        <span><i className="fa-solid fa-x text-danger showAndHiddenButton" onClick={() => eliminateListElement(index)}></i></span>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    ))}
+                </>
+                <div className="row">
+                    <div className="col-12  m-auto border-top border-secondary paper">
+                        <p className="itemBrandStyle">{list.length + " item left"}</p>
+                    </div>
+                </div>
+
+            </div>
+        </div >
 
 
     )
